@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
 
 android {
     compileSdkVersion 29
@@ -56,4 +57,6 @@ dependencies {
     //Architecture Component viewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle_version"
+    
+    implementation 'androidx.cardview:cardview:1.0.0'
 }

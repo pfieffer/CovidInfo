@@ -1,25 +1,30 @@
 package com.ravigarbuja.covidinfo.ui
 
 import android.os.Bundle
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import com.ravigarbuja.covidinfo.BR
 import com.ravigarbuja.covidinfo.R
+import com.ravigarbuja.covidinfo.base.BaseActivity
 import com.ravigarbuja.covidinfo.databinding.ActivityMainBinding
 import com.ravigarbuja.covidinfo.util.Status
-import kotlinx.android.synthetic.main.activity_main.*
+import com.ravigarbuja.covidinfo.util.showToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
     private val mainViewModel: MainViewModel by viewModel()
 
+    override fun getLayoutId(): Int = R.layout.activity_main
+
+    override fun getViewModel(): MainViewModel = mainViewModel
+
+    override fun getBindingVariable(): Int = BR.viewModel
+
+    private lateinit var mBinding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding: ActivityMainBinding = DataBindingUtil.setContentView(
-            this, R.layout.activity_main
-        )
+        mBinding = mViewDataBinding
 
         initObservable()
 
@@ -29,14 +34,19 @@ class MainActivity : AppCompatActivity() {
         with(mainViewModel) {
             summaryLiveData.observe(this@MainActivity, Observer {
                 when (it.status) {
+                    Status.PROGRESS -> {
+                        hideLoading()
+                    }
                     Status.LOADING -> {
-
+                        showLoading("")
                     }
                     Status.ERROR -> {
-                        Toast.makeText(this@MainActivity, "Error", Toast.LENGTH_LONG).show()
+                        hideLoading()
+                        showToast("Error")
                     }
                     Status.SUCCESS -> {
-                        tv_main.text = it.data.toString()
+                        hideLoading()
+                        this.populateData(it.data!!)
                     }
                 }
             })

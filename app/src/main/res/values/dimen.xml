@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_padding_small">4dp</dimen>
+    <dimen name="margin_padding_medium">8dp</dimen>
+    <dimen name="margin_padding_large">16dp</dimen>
+
+    <!--region: Card dimens-->
+    <dimen name="card_corner_radius">4dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+
+    <!--region: Text Sizes-->
+    <dimen name="txt_size_large">24sp</dimen>
+</resources>

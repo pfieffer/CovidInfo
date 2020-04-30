@@ -8,4 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextAppearance.Text" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+    <style name="TextAppearance.Text.White" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="TextAppearance.Text.Headline" parent="TextAppearance.Text">
+        <item name="android:textSize">@dimen/txt_size_large</item>
+    </style>
+    <style name="TextAppearance.Text.Headline.White" parent="TextAppearance.Text.Headline">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>
