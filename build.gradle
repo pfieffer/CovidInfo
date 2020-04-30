@@ -5,7 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.1'
@@ -13,6 +13,15 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+    }
+
+    ext {
+        koin_version = '2.1.5'
+
+        retrofit_version = '2.5.0'
+        okhttp_version = '3.12.1'
+
+        lifecycle_version = '2.2.0'
     }
 }
 

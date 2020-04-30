@@ -23,6 +23,10 @@ android {
         }
     }
 
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
@@ -34,4 +38,22 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Koin for Android
+    implementation "org.koin:koin-android:$rootProject.koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$rootProject.koin_version"
+
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit_version"
+
+    // okhttp
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp_version"
+    implementation 'com.itkacher.okhttpprofiler:okhttpprofiler:1.0.7'
+
+    //Architecture Component viewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle_version"
 }
