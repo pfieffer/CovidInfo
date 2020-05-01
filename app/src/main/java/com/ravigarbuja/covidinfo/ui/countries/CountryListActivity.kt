@@ -40,6 +40,7 @@ class CountryListActivity : BaseActivity<CountryListViewModel, ActivityCountryLi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = mViewDataBinding
+        setUpToolbarWithBackButton()
         countryListViewModel.setNavigator(this)
 
         val data: ArrayList<Country>

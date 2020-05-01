@@ -39,7 +39,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(), MainNav
             summaryLiveData.observe(this@MainActivity, Observer {
                 when (it.status) {
                     Status.PROGRESS -> {
-                        hideLoading()
+                        showLoading("")
                     }
                     Status.LOADING -> {
                         showLoading("")
