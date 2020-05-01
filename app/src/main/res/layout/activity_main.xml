@@ -7,14 +7,14 @@
 
         <variable
             name="viewModel"
-            type="com.ravigarbuja.covidinfo.ui.MainViewModel" />
+            type="com.ravigarbuja.covidinfo.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/margin_padding_medium"
-        tools:context=".ui.MainActivity">
+        tools:context=".ui.main.MainActivity">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_summary"

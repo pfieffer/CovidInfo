@@ -1,4 +1,4 @@
-package com.ravigarbuja.covidinfo.ui
+package com.ravigarbuja.covidinfo.ui.main
 
 interface MainNavigator{
     fun navigateToSummaryDetail()
