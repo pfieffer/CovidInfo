@@ -37,7 +37,9 @@ class MainViewModel(
     }
 
     fun onByCountriesClicked(){
-        getNavigator().navigateToByCountriesScreen(summaryData.value!!.countries as ArrayList<Country>)
+        summaryData.value?.let {
+            getNavigator().navigateToByCountriesScreen(it.countries as ArrayList<Country>)
+        }
     }
 
 }

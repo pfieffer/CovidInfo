@@ -9,4 +9,6 @@
     <string name="txt_data_updated_on">Data updated on:</string>
 
     <string name="cases_confirmed">Cases Confirmed: %d</string>
+    <string name="menu_title_search_country">Search Country</string>
+    <string name="menu_search_et_hint">Search…</string>
 </resources>
