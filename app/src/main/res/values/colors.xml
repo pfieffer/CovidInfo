@@ -5,4 +5,9 @@
     <color name="colorAccent">#03DAC5</color>
 
     <color name="colorProgressBg">#8C6200EE</color>
+
+    <color name="colorBtnDown">#2ec8cb</color>
+    <color name="colorBtnUp">#3adc92</color>
+
+    <color name="colorGenericBackground">#253858</color>
 </resources>

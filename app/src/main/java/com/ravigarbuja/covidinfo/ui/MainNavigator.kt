@@ -1,3 +1,6 @@
 package com.ravigarbuja.covidinfo.ui
 
-interface MainNavigator
+interface MainNavigator{
+    fun navigateToSummaryDetail()
+    fun navigateToByCountriesScreen()
+}

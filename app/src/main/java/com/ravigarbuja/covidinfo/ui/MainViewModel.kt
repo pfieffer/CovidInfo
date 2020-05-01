@@ -29,5 +29,12 @@ class MainViewModel(
         totalRecovered.postValue(data.global.totalRecovered.toString())
     }
 
+    fun onSummaryClicked(){
+        getNavigator().navigateToSummaryDetail()
+    }
+
+    fun onByCountriesClicked(){
+        getNavigator().navigateToByCountriesScreen()
+    }
 
 }

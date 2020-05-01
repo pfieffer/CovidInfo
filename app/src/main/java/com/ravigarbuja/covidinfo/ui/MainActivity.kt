@@ -10,7 +10,7 @@ import com.ravigarbuja.covidinfo.util.Status
 import com.ravigarbuja.covidinfo.util.showToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
+class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(), MainNavigator {
 
     private val mainViewModel: MainViewModel by viewModel()
 
@@ -25,7 +25,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = mViewDataBinding
-
+        mainViewModel.setNavigator(this)
         initObservable()
 
     }
@@ -52,4 +52,18 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
             })
         }
     }
+
+    /**
+     * Start: MainNavigator Implementations
+     */
+    override fun navigateToSummaryDetail() {
+        showToast("Navigate to Summary detail screen")
+    }
+
+    override fun navigateToByCountriesScreen() {
+        showToast("Navigate to By Countries screen")
+    }
+    /**
+     * End: MainNavigator Implementations
+     */
 }

@@ -57,6 +57,7 @@ dependencies {
     //Architecture Component viewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle_version"
-    
+
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "com.google.android.material:material:1.1.0"
 }

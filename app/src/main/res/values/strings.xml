@@ -3,4 +3,5 @@
     <string name="txt_total_confirmed">Total Confirmed</string>
     <string name="txt_total_deaths">Total Deaths</string>
     <string name="txt_total_recovered">Total Recovered</string>
+    <string name="txt_summary">Summary</string>
 </resources>
