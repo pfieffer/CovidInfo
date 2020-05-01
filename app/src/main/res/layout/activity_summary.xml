@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <data>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.ravigarbuja.covidinfo.ui.summary.SummaryViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_padding_medium"
+        android:layout_marginEnd="@dimen/margin_padding_medium"
         tools:context=".ui.summary.SummaryActivity">
+
+        <TextView
+            android:id="@+id/tv_data_updated_label"
+            style="@style/TextAppearance.Text.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_data_updated_on"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_date_updated"
+            style="@style/TextAppearance.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.dateLiveData}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_data_updated_label"
+            tools:text="2020-02-02 05:45" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

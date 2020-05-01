@@ -13,4 +13,7 @@
     <dimen name="txt_size_large">24sp</dimen>
 
     <dimen name="btn_corner_radius">8dp</dimen>
+
+    <!--region: Chart diemens-->
+    <dimen name="donut_thickness">6dp</dimen>
 </resources>

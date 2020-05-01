@@ -1,6 +1,5 @@
 package com.ravigarbuja.covidinfo.ui.summary
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -28,9 +27,16 @@ class SummaryActivity : BaseActivity<SummaryViewModel, ActivitySummaryBinding>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = mViewDataBinding
+
+        intent.extras?.getParcelable<Global>(INTENT_EXTRA_GLOBAL_DATA)?.let{
+            summaryViewModel.setGlobalData(it)
+        }
+        intent.extras?.getString(INTENT_EXTRA_DATE_DATA)?.let {
+            summaryViewModel.setDate(it)
+        }
     }
 
-    companion object{
+    companion object {
         fun getInstance(context: Context, globalSummaryData: Global, dateOfData: String): Intent {
             return Intent(context, SummaryActivity::class.java).apply {
                 putExtra(INTENT_EXTRA_GLOBAL_DATA, globalSummaryData)
