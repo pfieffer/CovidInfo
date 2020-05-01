@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.ravigarbuja.covidinfo.ui.summary.SummaryViewModel" />
@@ -33,7 +34,19 @@
             android:text="@{viewModel.dateLiveData}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_data_updated_label"
-            tools:text="2020-02-02 05:45" />
+            tools:text="Fri Apr 05 2020" />
+
+        <TextView
+            app:layout_constraintStart_toEndOf="@id/tv_date_updated"
+            app:layout_constraintTop_toBottomOf="@id/tv_date_updated"
+            app:layout_constraintBottom_toTopOf="@id/tv_date_updated"
+            android:id="@+id/tv_time_updated"
+            style="@style/TextAppearance.Text"
+            android:layout_marginStart="@dimen/margin_padding_small"
+            android:text="@{viewModel.timeLiveData}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="5:37 PM" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

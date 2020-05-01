@@ -33,7 +33,7 @@ class SummaryActivity : BaseActivity<SummaryViewModel, ActivitySummaryBinding>()
             summaryViewModel.setGlobalData(it)
         }
         intent.extras?.getString(INTENT_EXTRA_DATE_DATA)?.let {
-            summaryViewModel.setDate(it)
+            summaryViewModel.setDateTime(it)
         }
     }
 

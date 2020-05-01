@@ -33,7 +33,9 @@ class MainViewModel(
     }
 
     fun onSummaryClicked(){
-        getNavigator().navigateToSummaryDetail(summaryData.value!!.global, summaryData.value!!.date)
+        summaryData.value?.let {
+            getNavigator().navigateToSummaryDetail(it.global, it.date)
+        }
     }
 
     fun onByCountriesClicked(){

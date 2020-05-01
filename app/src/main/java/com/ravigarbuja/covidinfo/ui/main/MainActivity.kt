@@ -28,9 +28,9 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(), MainNav
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initObservable()
         mBinding = mViewDataBinding
         mainViewModel.setNavigator(this)
-        initObservable()
 
     }
 
