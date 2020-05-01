@@ -5,8 +5,14 @@
     <string name="txt_total_deaths">Total Deaths</string>
     <string name="txt_total_recovered">Total Recovered</string>
     <string name="txt_summary">Summary</string>
+    <string name="countries_number">Data from %d countries</string>
+    <string name="label_by_countries">By Countries</string>
+    <string name="label_awareness">Awareness</string>
+    <string name="label_about">About</string>
 
     <string name="txt_data_updated_on">Data updated on:</string>
 
     <string name="cases_confirmed">Cases Confirmed: %d</string>
+    <string name="menu_title_search_country">Search Country</string>
+    <string name="menu_search_et_hint">Search…</string>
 </resources>

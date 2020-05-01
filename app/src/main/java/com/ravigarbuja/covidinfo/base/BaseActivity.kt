@@ -90,4 +90,17 @@ abstract class BaseActivity<M : BaseViewModel<*>, V : ViewDataBinding> : AppComp
         super.onBackPressed()
         overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
     }
+
+    /**
+     * function to setup back button on the toolbar
+     */
+    fun setUpToolbarWithBackButton(){
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

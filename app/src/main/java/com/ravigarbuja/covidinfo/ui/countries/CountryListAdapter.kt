@@ -2,14 +2,18 @@ package com.ravigarbuja.covidinfo.ui.countries
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.ravigarbuja.covidinfo.data.network.model.Country
 import com.ravigarbuja.covidinfo.databinding.ItemCountryListBinding
 
-class CountryListAdapter(
-    private var countryData: List<Country>,
-    private val onItemClickListener: CountryListNavigator
-) : RecyclerView.Adapter<CountryListAdapter.CountryItemViewHolder>() {
+class CountryListAdapter constructor(
+    private val countryListViewModel: CountryListViewModel,
+    private val countryList: MutableList<Country> = arrayListOf()
+) : RecyclerView.Adapter<CountryListAdapter.CountryItemViewHolder>(), Filterable {
+
+    private var countryListFiltered: MutableList<Country> = arrayListOf()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -21,24 +25,64 @@ class CountryListAdapter(
     }
 
     override fun onBindViewHolder(holder: CountryItemViewHolder, position: Int) {
-        val dispatchedOrder = countryData[position]
-        holder.bind(dispatchedOrder, onItemClickListener)
+        holder.bind(position)
     }
 
     override fun getItemCount(): Int {
-        return countryData.size
+        return countryListFiltered.size
     }
 
-    inner class CountryItemViewHolder(private val binding: ItemCountryListBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class CountryItemViewHolder(private val binding: ItemCountryListBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Country, listener: CountryListNavigator) {
-            binding.countryModel = item
-            binding.root.setOnClickListener {
-                listener.onItemClick(item)
+        fun bind(position: Int) {
+            with(binding) {
+                countryModel = countryListFiltered[position]
+                root.setOnClickListener {
+                    countryListViewModel.getNavigator().onItemClick(countryModel as Country)
+                }
+                executePendingBindings()
             }
-            binding.executePendingBindings()
         }
+    }
+
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(charSequence: CharSequence): FilterResults {
+                val charString = charSequence.toString()
+                countryListFiltered.clear()
+                if (charString.isEmpty()) {
+                    countryListFiltered.addAll(countryList)
+                } else {
+                    for (row in countryList) {
+                        // name match condition. this might differ depending on your requirement
+                        if (row.name.toLowerCase().contains(charString.toLowerCase())) {
+                            countryListFiltered.add(row)
+                        }
+                    }
+                }
+
+                val filterResults = FilterResults()
+                filterResults.values = countryListFiltered
+                return filterResults
+            }
+
+            @Suppress("UNCHECKED_CAST")
+            override fun publishResults(
+                charSequence: CharSequence,
+                filterResults: FilterResults
+            ) {
+                countryListFiltered = filterResults.values as MutableList<Country>
+                notifyDataSetChanged()
+            }
+        }
+    }
+
+    fun setCountryList(list: List<Country>) {
+        this.countryList.clear()
+        this.countryListFiltered.clear()
+        this.countryList.addAll(list)
+        this.countryListFiltered.addAll(list)
+        notifyDataSetChanged()
     }
 
 }

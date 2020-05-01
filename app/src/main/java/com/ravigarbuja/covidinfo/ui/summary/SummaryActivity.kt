@@ -27,6 +27,7 @@ class SummaryActivity : BaseActivity<SummaryViewModel, ActivitySummaryBinding>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = mViewDataBinding
+        setUpToolbarWithBackButton()
 
         intent.extras?.getParcelable<Global>(INTENT_EXTRA_GLOBAL_DATA)?.let{
             summaryViewModel.setGlobalData(it)

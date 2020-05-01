@@ -119,10 +119,10 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:onClick="@{()->viewModel.onByCountriesClicked()}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_padding_large"
+            android:onClick="@{()->viewModel.onByCountriesClicked()}"
             app:cardBackgroundColor="@color/colorAccent"
             app:cardCornerRadius="@dimen/card_corner_radius"
             app:cardElevation="@dimen/card_elevation"
@@ -139,7 +139,7 @@
                     style="@style/TextAppearance.Text.Headline.White"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="By Countries"
+                    android:text="@string/label_by_countries"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -154,9 +154,10 @@
                     style="@style/TextAppearance.Text.White"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{@string/countries_number(viewModel.summaryData.countries.size())}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_label_countries"
-                    tools:text="268 Countries" />
+                    tools:text="Data from 113 countries" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -164,42 +165,47 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_awareness"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_padding_large"
             app:cardBackgroundColor="@color/colorAccent"
             app:cardElevation="@dimen/card_elevation"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/cv_about"
-            android:id="@+id/cv_awareness"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
                 style="@style/TextAppearance.Text.Headline.White"
-                android:padding="@dimen/margin_padding_large"
-                android:drawableTop="@drawable/ic_school_white_24dp"
-                android:text="Awareness"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableTop="@drawable/ic_school_white_24dp"
+                android:padding="@dimen/margin_padding_large"
+                android:text="@string/label_awareness" />
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_about"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_padding_large"
             app:cardBackgroundColor="@color/colorBtnDown"
             app:cardElevation="@dimen/card_elevation"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/cv_awareness"
             app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/cv_about"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            app:layout_constraintStart_toEndOf="@id/cv_awareness">
 
             <TextView
                 style="@style/TextAppearance.Text.Headline.White"
-                android:padding="@dimen/margin_padding_large"
-                android:drawableTop="@drawable/ic_info_outline_white_24dp"
-                android:text="About"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableTop="@drawable/ic_info_outline_white_24dp"
+                android:padding="@dimen/margin_padding_large"
+                android:text="@string/label_about" />
 
         </androidx.cardview.widget.CardView>
 
