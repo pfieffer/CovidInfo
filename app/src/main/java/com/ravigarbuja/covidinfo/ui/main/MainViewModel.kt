@@ -19,19 +19,20 @@ class MainViewModel(
         }
     }
 
+    val summaryData = MutableLiveData<Summary>()
     val totalConfirmed = MutableLiveData<String>()
     val totalDeaths = MutableLiveData<String>()
     val totalRecovered = MutableLiveData<String>()
-
 
     fun populateData(data: Summary) {
         totalConfirmed.postValue(data.global.totalConfirmed.toString())
         totalDeaths.postValue(data.global.totalDeaths.toString())
         totalRecovered.postValue(data.global.totalRecovered.toString())
+        summaryData.postValue(data)
     }
 
     fun onSummaryClicked(){
-        getNavigator().navigateToSummaryDetail()
+        getNavigator().navigateToSummaryDetail(summaryData.value!!.global, summaryData.value!!.date)
     }
 
     fun onByCountriesClicked(){

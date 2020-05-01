@@ -5,7 +5,9 @@ import androidx.lifecycle.Observer
 import com.ravigarbuja.covidinfo.BR
 import com.ravigarbuja.covidinfo.R
 import com.ravigarbuja.covidinfo.base.BaseActivity
+import com.ravigarbuja.covidinfo.data.network.model.Global
 import com.ravigarbuja.covidinfo.databinding.ActivityMainBinding
+import com.ravigarbuja.covidinfo.ui.summary.SummaryActivity
 import com.ravigarbuja.covidinfo.util.Status
 import com.ravigarbuja.covidinfo.util.showToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -56,8 +58,8 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(), MainNav
     /**
      * Start: MainNavigator Implementations
      */
-    override fun navigateToSummaryDetail() {
-        showToast("Navigate to Summary detail screen")
+    override fun navigateToSummaryDetail(global: Global, date: String) {
+        startActivity(SummaryActivity.getInstance(this, global, date))
     }
 
     override fun navigateToByCountriesScreen() {

@@ -7,3 +7,6 @@ class Api {
         const val SUMMARY = "summary"
     }
 }
+
+const val INTENT_EXTRA_GLOBAL_DATA = "global"
+const val INTENT_EXTRA_DATE_DATA = "date"

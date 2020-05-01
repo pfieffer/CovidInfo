@@ -5,8 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.ravigarbuja.covidinfo.BR
+import com.ravigarbuja.covidinfo.INTENT_EXTRA_DATE_DATA
+import com.ravigarbuja.covidinfo.INTENT_EXTRA_GLOBAL_DATA
 import com.ravigarbuja.covidinfo.R
 import com.ravigarbuja.covidinfo.base.BaseActivity
+import com.ravigarbuja.covidinfo.data.network.model.Global
 import com.ravigarbuja.covidinfo.databinding.ActivitySummaryBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -28,11 +31,10 @@ class SummaryActivity : BaseActivity<SummaryViewModel, ActivitySummaryBinding>()
     }
 
     companion object{
-        fun start(activity: Activity) {
-            with(activity) {
-                startActivityForResult(Intent().apply {
-                    setClass(this@with, CountryListActivity::class.java)
-                }, REQUEST_CODE_SELECT_COUNTRY)
+        fun getInstance(context: Context, globalSummaryData: Global, dateOfData: String): Intent {
+            return Intent(context, SummaryActivity::class.java).apply {
+                putExtra(INTENT_EXTRA_GLOBAL_DATA, globalSummaryData)
+                putExtra(INTENT_EXTRA_DATE_DATA, dateOfData)
             }
         }
     }

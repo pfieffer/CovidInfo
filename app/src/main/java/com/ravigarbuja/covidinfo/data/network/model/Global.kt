@@ -1,7 +1,10 @@
 package com.ravigarbuja.covidinfo.data.network.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Global(
     @SerializedName("NewConfirmed") val newConfirmed: Int,
     @SerializedName("TotalConfirmed") val totalConfirmed: Int,
@@ -9,4 +12,4 @@ data class Global(
     @SerializedName("TotalDeaths") val totalDeaths: Int,
     @SerializedName("NewRecovered") val newRecovered: Int,
     @SerializedName("TotalRecovered") val totalRecovered: Int
-)
+): Parcelable
