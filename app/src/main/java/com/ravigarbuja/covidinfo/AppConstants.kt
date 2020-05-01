@@ -10,3 +10,4 @@ class Api {
 
 const val INTENT_EXTRA_GLOBAL_DATA = "global"
 const val INTENT_EXTRA_DATE_DATA = "date"
+const val INTENT_EXTRA_COUNTRIES_DATA = "countries-data"

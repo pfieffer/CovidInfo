@@ -5,8 +5,10 @@ import androidx.lifecycle.Observer
 import com.ravigarbuja.covidinfo.BR
 import com.ravigarbuja.covidinfo.R
 import com.ravigarbuja.covidinfo.base.BaseActivity
+import com.ravigarbuja.covidinfo.data.network.model.Country
 import com.ravigarbuja.covidinfo.data.network.model.Global
 import com.ravigarbuja.covidinfo.databinding.ActivityMainBinding
+import com.ravigarbuja.covidinfo.ui.countries.CountryListActivity
 import com.ravigarbuja.covidinfo.ui.summary.SummaryActivity
 import com.ravigarbuja.covidinfo.util.Status
 import com.ravigarbuja.covidinfo.util.showToast
@@ -62,8 +64,8 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(), MainNav
         startActivity(SummaryActivity.getInstance(this, global, date))
     }
 
-    override fun navigateToByCountriesScreen() {
-        showToast("Navigate to By Countries screen")
+    override fun navigateToByCountriesScreen(countryList: ArrayList<Country>) {
+        startActivity(CountryListActivity.getInstance(this, countryList))
     }
     /**
      * End: MainNavigator Implementations

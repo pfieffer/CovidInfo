@@ -3,6 +3,7 @@ package com.ravigarbuja.covidinfo.ui.main
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import com.ravigarbuja.covidinfo.base.BaseViewModel
+import com.ravigarbuja.covidinfo.data.network.model.Country
 import com.ravigarbuja.covidinfo.data.network.model.Summary
 import com.ravigarbuja.covidinfo.data.network.repository.SummaryRepository
 import com.ravigarbuja.covidinfo.ui.main.MainNavigator
@@ -36,7 +37,7 @@ class MainViewModel(
     }
 
     fun onByCountriesClicked(){
-        getNavigator().navigateToByCountriesScreen()
+        getNavigator().navigateToByCountriesScreen(summaryData.value!!.countries as ArrayList<Country>)
     }
 
 }
