@@ -1,12 +1,14 @@
 package com.ravigarbuja.covidinfo.base
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
+import com.ravigarbuja.covidinfo.R
 import com.ravigarbuja.covidinfo.util.ProgressDialogHelper
 import com.ravigarbuja.covidinfo.util.hideSoftKeyboard
 
@@ -68,4 +70,24 @@ abstract class BaseActivity<M : BaseViewModel<*>, V : ViewDataBinding> : AppComp
      * @return variable id
      */
     abstract fun getBindingVariable(): Int
+
+    override fun startActivity(intent: Intent?) {
+        super.startActivity(intent)
+        overridePendingTransitionEnter()
+    }
+
+    /**
+     * activity enter to next transition
+     */
+    private fun overridePendingTransitionEnter() {
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+    }
+
+    /**
+     * triggered on backpressed with right transition
+     */
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
+    }
 }
