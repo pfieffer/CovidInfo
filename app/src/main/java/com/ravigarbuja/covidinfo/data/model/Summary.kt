@@ -1,4 +1,4 @@
-package com.ravigarbuja.covidinfo.data.network.model
+package com.ravigarbuja.covidinfo.data.model
 
 import com.google.gson.annotations.SerializedName
 

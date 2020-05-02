@@ -3,18 +3,22 @@ package com.ravigarbuja.covidinfo.ui.main
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import com.ravigarbuja.covidinfo.base.BaseViewModel
-import com.ravigarbuja.covidinfo.data.network.model.Country
-import com.ravigarbuja.covidinfo.data.network.model.Summary
+import com.ravigarbuja.covidinfo.data.model.Country
+import com.ravigarbuja.covidinfo.data.model.Summary
 import com.ravigarbuja.covidinfo.data.network.repository.SummaryRepository
-import com.ravigarbuja.covidinfo.ui.main.MainNavigator
 import com.ravigarbuja.covidinfo.util.Resource
 
 class MainViewModel(
     private val summaryRepository: SummaryRepository
 ) : BaseViewModel<MainNavigator>() {
+    val dataLoaded = MutableLiveData<Boolean>(true)
     val summaryLiveData = MediatorLiveData<Resource<Summary>>()
 
     init {
+        loadSummaryData()
+    }
+
+    private fun loadSummaryData() {
         summaryLiveData.addSource(summaryRepository.getSummary()) {
             summaryLiveData.value = it
         }
@@ -26,22 +30,27 @@ class MainViewModel(
     val totalRecovered = MutableLiveData<String>()
 
     fun populateData(data: Summary) {
+        dataLoaded.postValue(true)
         totalConfirmed.postValue(data.global.totalConfirmed.toString())
         totalDeaths.postValue(data.global.totalDeaths.toString())
         totalRecovered.postValue(data.global.totalRecovered.toString())
         summaryData.postValue(data)
     }
 
-    fun onSummaryClicked(){
+    fun onSummaryClicked() {
         summaryData.value?.let {
             getNavigator().navigateToSummaryDetail(it.global, it.date)
         }
     }
 
-    fun onByCountriesClicked(){
+    fun onByCountriesClicked() {
         summaryData.value?.let {
             getNavigator().navigateToByCountriesScreen(it.countries as ArrayList<Country>)
         }
+    }
+
+    fun onRetryClicked() {
+        loadSummaryData()
     }
 
 }

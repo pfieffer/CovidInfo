@@ -2,7 +2,7 @@ package com.ravigarbuja.covidinfo.ui.summary
 
 import androidx.lifecycle.MutableLiveData
 import com.ravigarbuja.covidinfo.base.BaseViewModel
-import com.ravigarbuja.covidinfo.data.network.model.Global
+import com.ravigarbuja.covidinfo.data.model.Global
 import com.ravigarbuja.covidinfo.util.DateTimeUtils
 
 class SummaryViewModel : BaseViewModel<SummaryNavigator>() {

@@ -8,7 +8,7 @@ import com.ravigarbuja.covidinfo.INTENT_EXTRA_DATE_DATA
 import com.ravigarbuja.covidinfo.INTENT_EXTRA_GLOBAL_DATA
 import com.ravigarbuja.covidinfo.R
 import com.ravigarbuja.covidinfo.base.BaseActivity
-import com.ravigarbuja.covidinfo.data.network.model.Global
+import com.ravigarbuja.covidinfo.data.model.Global
 import com.ravigarbuja.covidinfo.databinding.ActivitySummaryBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -29,7 +29,7 @@ class SummaryActivity : BaseActivity<SummaryViewModel, ActivitySummaryBinding>()
         mBinding = mViewDataBinding
         setUpToolbarWithBackButton()
 
-        intent.extras?.getParcelable<Global>(INTENT_EXTRA_GLOBAL_DATA)?.let{
+        intent.extras?.getParcelable<Global>(INTENT_EXTRA_GLOBAL_DATA)?.let {
             summaryViewModel.setGlobalData(it)
         }
         intent.extras?.getString(INTENT_EXTRA_DATE_DATA)?.let {
