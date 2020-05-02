@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.ravigarbuja.covidinfo.base.BaseRepository
 import com.ravigarbuja.covidinfo.base.BaseRepositoryImpl
 import com.ravigarbuja.covidinfo.data.network.ApiServices
-import com.ravigarbuja.covidinfo.data.network.model.Summary
+import com.ravigarbuja.covidinfo.data.model.Summary
 import com.ravigarbuja.covidinfo.util.Resource
 import kotlinx.coroutines.launch
 

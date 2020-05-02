@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import com.ravigarbuja.covidinfo.data.network.model.Country
+import com.ravigarbuja.covidinfo.data.model.Country
 import com.ravigarbuja.covidinfo.databinding.ItemCountryListBinding
 
 class CountryListAdapter constructor(

@@ -5,8 +5,8 @@ import androidx.lifecycle.Observer
 import com.ravigarbuja.covidinfo.BR
 import com.ravigarbuja.covidinfo.R
 import com.ravigarbuja.covidinfo.base.BaseActivity
-import com.ravigarbuja.covidinfo.data.network.model.Country
-import com.ravigarbuja.covidinfo.data.network.model.Global
+import com.ravigarbuja.covidinfo.data.model.Country
+import com.ravigarbuja.covidinfo.data.model.Global
 import com.ravigarbuja.covidinfo.databinding.ActivityMainBinding
 import com.ravigarbuja.covidinfo.ui.countries.CountryListActivity
 import com.ravigarbuja.covidinfo.ui.summary.SummaryActivity
@@ -46,6 +46,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(), MainNav
                     }
                     Status.ERROR -> {
                         hideLoading()
+                        this.dataLoaded.postValue(false)
                         showToast("Error")
                     }
                     Status.SUCCESS -> {

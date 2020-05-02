@@ -12,7 +12,7 @@ import com.ravigarbuja.covidinfo.BR
 import com.ravigarbuja.covidinfo.INTENT_EXTRA_COUNTRIES_DATA
 import com.ravigarbuja.covidinfo.R
 import com.ravigarbuja.covidinfo.base.BaseActivity
-import com.ravigarbuja.covidinfo.data.network.model.Country
+import com.ravigarbuja.covidinfo.data.model.Country
 import com.ravigarbuja.covidinfo.databinding.ActivityCountryListBinding
 import com.ravigarbuja.covidinfo.util.showToast
 import kotlinx.android.synthetic.main.activity_country_list.*

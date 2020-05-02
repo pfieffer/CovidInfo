@@ -7,7 +7,7 @@
 
         <variable
             name="countryModel"
-            type="com.ravigarbuja.covidinfo.data.network.model.Country" />
+            type="com.ravigarbuja.covidinfo.data.model.Country" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

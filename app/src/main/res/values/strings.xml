@@ -9,6 +9,7 @@
     <string name="label_by_countries">By Countries</string>
     <string name="label_awareness">Awareness</string>
     <string name="label_about">About</string>
+    <string name="txt_data_load_failed">Data Load failed. Click to try again</string>
 
     <string name="txt_data_updated_on">Data updated on:</string>
 

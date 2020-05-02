@@ -1,4 +1,4 @@
-package com.ravigarbuja.covidinfo.data.network.model
+package com.ravigarbuja.covidinfo.data.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -12,4 +12,4 @@ data class Global(
     @SerializedName("TotalDeaths") val totalDeaths: Int,
     @SerializedName("NewRecovered") val newRecovered: Int,
     @SerializedName("TotalRecovered") val totalRecovered: Int
-): Parcelable
+) : Parcelable
