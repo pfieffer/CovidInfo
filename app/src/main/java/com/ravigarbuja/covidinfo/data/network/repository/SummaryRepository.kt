@@ -39,6 +39,10 @@ class SummaryRepositoryImpl(
             try {
                 response.postValue(Resource.loading(null))
                 val res = apiService.getSummaryAsync().await()
+                // assign imagePath as it is not provided from the api
+                for(country in res.countries){
+                    country.imagePath = "countriesFlag/" + country.countryCode.toLowerCase() + ".png"
+                }
                 response.postValue(Resource.success(res))
             } catch (e: Throwable) {
                 e.printStackTrace()
