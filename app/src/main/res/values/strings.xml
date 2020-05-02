@@ -16,4 +16,5 @@
     <string name="cases_confirmed">Cases Confirmed: %d</string>
     <string name="menu_title_search_country">Search Country</string>
     <string name="menu_search_et_hint">Search…</string>
+    <string name="data_for_country">Data for %s</string>
 </resources>

@@ -15,5 +15,6 @@ data class Country(
     @SerializedName("TotalDeaths") val totalDeaths: Int,
     @SerializedName("NewRecovered") val newRecovered: Int,
     @SerializedName("TotalRecovered") val totalRecovered: Int,
-    @SerializedName("Date") val date: String
+    @SerializedName("Date") val date: String,
+    var imagePath: String = ""
 ) : Parcelable

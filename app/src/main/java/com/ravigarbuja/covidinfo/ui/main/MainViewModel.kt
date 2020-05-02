@@ -13,9 +13,17 @@ class MainViewModel(
 ) : BaseViewModel<MainNavigator>() {
     val dataLoaded = MutableLiveData<Boolean>(true)
     val summaryLiveData = MediatorLiveData<Resource<Summary>>()
+    val defaultCountryLD = MediatorLiveData<Country>()
 
     init {
         loadSummaryData()
+        setDefaultCountry()
+    }
+
+    private fun setDefaultCountry() {
+        defaultCountryLD.addSource(summaryRepository.getDefaultCountry()) {
+            defaultCountryLD.value = it
+        }
     }
 
     private fun loadSummaryData() {
