@@ -10,43 +10,64 @@
             type="com.ravigarbuja.covidinfo.ui.summary.SummaryViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="@dimen/margin_padding_medium"
-        android:layout_marginEnd="@dimen/margin_padding_medium"
-        tools:context=".ui.summary.SummaryActivity">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_data_updated_label"
-            style="@style/TextAppearance.Text.Headline"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_data_updated_on"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_padding_medium"
+            android:layout_marginEnd="@dimen/margin_padding_medium"
+            tools:context=".ui.summary.SummaryActivity">
 
-        <TextView
-            android:id="@+id/tv_date_updated"
-            style="@style/TextAppearance.Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{viewModel.dateLiveData}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_data_updated_label"
-            tools:text="Fri Apr 05 2020" />
+            <TextView
+                android:id="@+id/tv_data_updated_label"
+                style="@style/TextAppearance.Text.Headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_data_updated_on"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            app:layout_constraintStart_toEndOf="@id/tv_date_updated"
-            app:layout_constraintTop_toBottomOf="@id/tv_date_updated"
-            app:layout_constraintBottom_toTopOf="@id/tv_date_updated"
-            android:id="@+id/tv_time_updated"
-            style="@style/TextAppearance.Text"
-            android:layout_marginStart="@dimen/margin_padding_small"
-            android:text="@{viewModel.timeLiveData}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="5:37 PM" />
+            <TextView
+                android:id="@+id/tv_date_updated"
+                style="@style/TextAppearance.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.dateLiveData}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_data_updated_label"
+                tools:text="Fri Apr 05 2020" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                app:layout_constraintStart_toEndOf="@id/tv_date_updated"
+                app:layout_constraintTop_toBottomOf="@id/tv_date_updated"
+                app:layout_constraintBottom_toTopOf="@id/tv_date_updated"
+                android:id="@+id/tv_time_updated"
+                style="@style/TextAppearance.Text"
+                android:layout_marginStart="@dimen/margin_padding_small"
+                android:text="@{viewModel.timeLiveData}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="5:37 PM" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/bar_chart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="@dimen/margin_padding_large"
+                app:layout_constraintTop_toBottomOf="@id/tv_date_updated"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/bar_chart_new_instances"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="@dimen/margin_padding_large"
+                app:layout_constraintTop_toBottomOf="@id/bar_chart"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
 </layout>
