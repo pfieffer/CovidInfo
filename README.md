@@ -24,8 +24,11 @@ The data is fetched from free api hosted [here](https://covid19api.com/). Massiv
 If you want to contribute to this project, you can open an issue, discuss it, work on it and then submit a PR.
 
 #### Screenshots:
-![Main Screen](https://github.com/pfieffer/CovidInfo/blob/master/screenshots/1.png)
 
-![Countries Screen](https://github.com/pfieffer/CovidInfo/blob/master/screenshots/2.png)
+| Main Screen | Countries List  |  
+|--|--|
+|![Main Screen](https://github.com/pfieffer/CovidInfo/blob/master/screenshots/1.png)  | ![Countries Screen](https://github.com/pfieffer/CovidInfo/blob/master/screenshots/2.png) |
 
-![Search / Filter](https://github.com/pfieffer/CovidInfo/blob/master/screenshots/3.png)
+|Search| Summary |
+|--|--|
+| ![Search / Filter](https://github.com/pfieffer/CovidInfo/blob/master/screenshots/3.png) | ![Search / Filter](https://github.com/pfieffer/CovidInfo/blob/master/screenshots/sum.png) |
