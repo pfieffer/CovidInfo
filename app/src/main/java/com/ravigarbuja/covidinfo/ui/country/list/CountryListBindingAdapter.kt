@@ -1,4 +1,4 @@
-package com.ravigarbuja.covidinfo.ui.countries
+package com.ravigarbuja.covidinfo.ui.country.list
 
 import android.graphics.drawable.Drawable
 import android.util.Log

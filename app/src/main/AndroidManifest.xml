@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.countries.CountryListActivity" />
+        <activity android:name=".ui.country.list.CountryListActivity" />
         <activity android:name=".ui.summary.SummaryActivity" />
     </application>
 

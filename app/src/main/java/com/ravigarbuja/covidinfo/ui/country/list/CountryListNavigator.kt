@@ -1,4 +1,4 @@
-package com.ravigarbuja.covidinfo.ui.countries
+package com.ravigarbuja.covidinfo.ui.country.list
 
 import com.ravigarbuja.covidinfo.data.model.Country
 

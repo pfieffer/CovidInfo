@@ -6,13 +6,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.ravigarbuja.covidinfo.ui.countries.CountryListViewModel" />
+            type="com.ravigarbuja.covidinfo.ui.country.list.CountryListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.countries.CountryListActivity">
+        tools:context=".ui.country.list.CountryListActivity">
 
         <androidx.recyclerview.widget.RecyclerView
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

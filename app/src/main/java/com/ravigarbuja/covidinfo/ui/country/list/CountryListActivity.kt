@@ -1,4 +1,4 @@
-package com.ravigarbuja.covidinfo.ui.countries
+package com.ravigarbuja.covidinfo.ui.country.list
 
 import android.content.Context
 import android.content.Intent
@@ -104,9 +104,10 @@ class CountryListActivity : BaseActivity<CountryListViewModel, ActivityCountryLi
 
 
     private fun setUpRecyclerView(data: MutableList<Country>) {
-        countryListAdapter = CountryListAdapter(
-            countryListViewModel = countryListViewModel
-        )
+        countryListAdapter =
+            CountryListAdapter(
+                countryListViewModel = countryListViewModel
+            )
         countryListAdapter.setCountryList(data)
 
         mBinding.rvCountriesList.adapter = countryListAdapter

@@ -8,7 +8,7 @@ import com.ravigarbuja.covidinfo.base.BaseActivity
 import com.ravigarbuja.covidinfo.data.model.Country
 import com.ravigarbuja.covidinfo.data.model.Global
 import com.ravigarbuja.covidinfo.databinding.ActivityMainBinding
-import com.ravigarbuja.covidinfo.ui.countries.CountryListActivity
+import com.ravigarbuja.covidinfo.ui.country.list.CountryListActivity
 import com.ravigarbuja.covidinfo.ui.summary.SummaryActivity
 import com.ravigarbuja.covidinfo.util.Status
 import com.ravigarbuja.covidinfo.util.showToast
