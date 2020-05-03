@@ -14,6 +14,7 @@ import com.ravigarbuja.covidinfo.R
 import com.ravigarbuja.covidinfo.base.BaseActivity
 import com.ravigarbuja.covidinfo.data.model.Country
 import com.ravigarbuja.covidinfo.databinding.ActivityCountryListBinding
+import com.ravigarbuja.covidinfo.ui.country.detail.CountryDetailActivity
 import com.ravigarbuja.covidinfo.util.showToast
 import kotlinx.android.synthetic.main.activity_country_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -135,6 +136,7 @@ class CountryListActivity : BaseActivity<CountryListViewModel, ActivityCountryLi
     }
 
     override fun onItemClick(country: Country) {
-        showToast("Open detail view for ${country.name}")
+//        showToast("Open detail view for ${country.name}")
+        startActivity(CountryDetailActivity.getInstance(this, country))
     }
 }

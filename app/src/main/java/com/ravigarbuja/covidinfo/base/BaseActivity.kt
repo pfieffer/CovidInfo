@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
@@ -92,11 +93,23 @@ abstract class BaseActivity<M : BaseViewModel<*>, V : ViewDataBinding> : AppComp
     }
 
     /**
-     * function to setup back button on the toolbar
+     * function to setup back button on the toolbar.
+     * Toolbar is the default toolbar
      */
     fun setUpToolbarWithBackButton(){
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+    }
+
+    /**
+     * function to setup back button on custom toolbar
+     * the one that we have included in the layout file
+     */
+    fun setUpToolbarWithBackButton(toolbar: Toolbar){
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp)
+        toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

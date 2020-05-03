@@ -5,6 +5,7 @@ const val BASE_URL = "https://api.covid19api.com/"
 class Api {
     object EndPoint {
         const val SUMMARY = "summary"
+        //https://api.covid19api.com/country/south-africa/status/confirmed?from=2020-03-01T00:00:00Z&to=2020-04-01T00:00:00Z
     }
 }
 

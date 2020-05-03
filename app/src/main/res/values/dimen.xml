@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--region: Margin Padding Sizes -->
     <dimen name="margin_padding_small">4dp</dimen>
     <dimen name="margin_padding_medium">8dp</dimen>
     <dimen name="margin_padding_large">16dp</dimen>
@@ -16,4 +17,10 @@
 
     <!--region: Chart diemens-->
     <dimen name="donut_thickness">6dp</dimen>
+
+    <!--region: Collapsing toolbar sizes-->
+    <dimen name="shrine_toolbar_offset_start">20dp</dimen>
+    <dimen name="shrine_toolbar_offset_top">20dp</dimen>
+    <dimen name="shrine_toolbar_image_offset_top">20dp</dimen>
+    <dimen name="shrine_toolbar_collapsed_height">20dp</dimen>
 </resources>
