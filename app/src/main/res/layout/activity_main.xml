@@ -168,6 +168,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:onClick="@{()->viewModel.onMyCountryClicked()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="@{viewModel.dataLoaded? View.VISIBLE: View.GONE}"

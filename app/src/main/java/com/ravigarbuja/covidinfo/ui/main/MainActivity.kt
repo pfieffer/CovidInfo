@@ -8,6 +8,7 @@ import com.ravigarbuja.covidinfo.base.BaseActivity
 import com.ravigarbuja.covidinfo.data.model.Country
 import com.ravigarbuja.covidinfo.data.model.Global
 import com.ravigarbuja.covidinfo.databinding.ActivityMainBinding
+import com.ravigarbuja.covidinfo.ui.country.detail.CountryDetailActivity
 import com.ravigarbuja.covidinfo.ui.country.list.CountryListActivity
 import com.ravigarbuja.covidinfo.ui.summary.SummaryActivity
 import com.ravigarbuja.covidinfo.util.Status
@@ -36,8 +37,8 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(), MainNav
 
     private fun initObservable() {
         with(mainViewModel) {
-            summaryLiveData.observe(this@MainActivity, Observer {
-                when (it.status) {
+            summaryLiveData.observe(this@MainActivity, Observer { responseResource ->
+                when (responseResource.status) {
                     Status.PROGRESS -> {
                         showLoading("")
                     }
@@ -51,7 +52,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(), MainNav
                     }
                     Status.SUCCESS -> {
                         hideLoading()
-                        this.populateData(it.data!!)
+                        this.populateData(responseResource.data!!)
                     }
                 }
             })
@@ -67,6 +68,10 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(), MainNav
 
     override fun navigateToByCountriesScreen(countryList: ArrayList<Country>) {
         startActivity(CountryListActivity.getInstance(this, countryList))
+    }
+
+    override fun navigateToMyCountryDetail(country: Country) {
+        startActivity(CountryDetailActivity.getInstance(this, country))
     }
     /**
      * End: MainNavigator Implementations
