@@ -11,23 +11,23 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:elevation="@dimen/card_elevation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/margin_padding_large"
+        android:layout_marginBottom="@dimen/margin_padding_small"
         android:background="@color/colorBtnDown"
-        android:layout_marginBottom="@dimen/margin_padding_small">
+        android:elevation="@dimen/card_elevation"
+        android:padding="@dimen/margin_padding_large">
 
         <ImageView
             android:id="@+id/iv_country_flag"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/country_flag_size"
+            android:layout_height="@dimen/country_flag_size"
             android:padding="@dimen/margin_padding_medium"
             android:scaleType="centerCrop"
-            app:setCountryFlag="@{countryModel.countryCode}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:setCountryFlag="@{countryModel.countryCode}" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -40,20 +40,34 @@
             app:layout_constraintTop_toTopOf="@id/iv_country_flag">
 
             <TextView
-                android:text="@{countryModel.name}"
-                android:maxLines="1"
-                android:ellipsize="end"
                 style="@style/TextAppearance.Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{countryModel.name}"
                 tools:text="Country Name" />
 
             <TextView
-                android:text="@{@string/cases_confirmed(countryModel.totalConfirmed)}"
                 style="@style/TextAppearance.Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{@string/cases_confirmed(countryModel.totalConfirmed)}"
                 tools:text="Total Confirmed: 24567" />
+
+            <TextView
+                style="@style/TextAppearance.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/total_deaths(countryModel.totalDeaths)}"
+                tools:text="Total Deaths: 245" />
+
+            <TextView
+                style="@style/TextAppearance.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/total_recovered(countryModel.totalRecovered)}"
+                tools:text="Total Deaths: 245" />
 
         </LinearLayout>
 
