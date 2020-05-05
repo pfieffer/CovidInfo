@@ -26,7 +26,7 @@
     <string name="menu_label_total_deaths">Total deaths</string>
     <string name="menu_label_total_recovered">Total recovered</string>
 
-    <string name="data_for_country">Data for %s</string>
+    <string name="data_f     or_country">Data for %s</string>
 
     <string name="large_text">
 
