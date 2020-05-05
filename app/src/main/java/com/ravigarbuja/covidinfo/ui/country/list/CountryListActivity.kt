@@ -3,7 +3,9 @@ package com.ravigarbuja.covidinfo.ui.country.list
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.widget.SearchView
@@ -15,7 +17,6 @@ import com.ravigarbuja.covidinfo.base.BaseActivity
 import com.ravigarbuja.covidinfo.data.model.Country
 import com.ravigarbuja.covidinfo.databinding.ActivityCountryListBinding
 import com.ravigarbuja.covidinfo.ui.country.detail.CountryDetailActivity
-import com.ravigarbuja.covidinfo.util.showToast
 import kotlinx.android.synthetic.main.activity_country_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -66,7 +67,7 @@ class CountryListActivity : BaseActivity<CountryListViewModel, ActivityCountryLi
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_search_country, menu)
+        menuInflater.inflate(R.menu.menu_country_list, menu)
 
         menu?.findItem(R.id.action_search)?.run {
             searchView = actionView as SearchView
@@ -103,6 +104,28 @@ class CountryListActivity : BaseActivity<CountryListViewModel, ActivityCountryLi
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_sort_total_cases -> {
+                Log.d(TAG, " Sort Clicked: cases")
+                countryListAdapter.sortByCases()
+                true
+            }
+            R.id.action_sort_total_deaths -> {
+                Log.d(TAG, " Sort Clicked: deaths")
+                countryListAdapter.sortByDeaths()
+                true
+            }
+
+            R.id.action_sort_total_recovered -> {
+                Log.d(TAG, " Sort Clicked: deaths")
+                countryListAdapter.sortByRecovered()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
 
     private fun setUpRecyclerView(data: MutableList<Country>) {
         countryListAdapter =
@@ -128,6 +151,8 @@ class CountryListActivity : BaseActivity<CountryListViewModel, ActivityCountryLi
 
 
     companion object {
+        private val TAG = CountryListActivity::class.java.name
+
         fun getInstance(context: Context, countriesData: ArrayList<Country>): Intent {
             return Intent(context, CountryListActivity::class.java).apply {
                 putParcelableArrayListExtra(INTENT_EXTRA_COUNTRIES_DATA, countriesData)

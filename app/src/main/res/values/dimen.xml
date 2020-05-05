@@ -23,4 +23,6 @@
     <dimen name="shrine_toolbar_offset_top">20dp</dimen>
     <dimen name="shrine_toolbar_image_offset_top">20dp</dimen>
     <dimen name="shrine_toolbar_collapsed_height">20dp</dimen>
+
+    <dimen name="country_flag_size">80dp</dimen>
 </resources>

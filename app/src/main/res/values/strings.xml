@@ -16,8 +16,16 @@
     <string name="txt_data_updated_on">Data updated on:</string>
 
     <string name="cases_confirmed">Cases Confirmed: %d</string>
+    <string name="total_deaths">Total Deaths: %d</string>
+    <string name="total_recovered">Total Recovered: %d</string>
+
     <string name="menu_title_search_country">Search Country</string>
+    <string name="menu_title_sor">Sort</string>
     <string name="menu_search_et_hint">Search…</string>
+    <string name="menu_label_total_cases">Total cases</string>
+    <string name="menu_label_total_deaths">Total deaths</string>
+    <string name="menu_label_total_recovered">Total recovered</string>
+
     <string name="data_for_country">Data for %s</string>
 
     <string name="large_text">

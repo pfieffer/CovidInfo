@@ -7,6 +7,7 @@ import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.ravigarbuja.covidinfo.data.model.Country
 import com.ravigarbuja.covidinfo.databinding.ItemCountryListBinding
+import java.util.*
 
 class CountryListAdapter constructor(
     private val countryListViewModel: CountryListViewModel,
@@ -32,7 +33,8 @@ class CountryListAdapter constructor(
         return countryListFiltered.size
     }
 
-    inner class CountryItemViewHolder(private val binding: ItemCountryListBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class CountryItemViewHolder(private val binding: ItemCountryListBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(position: Int) {
             with(binding) {
@@ -82,6 +84,27 @@ class CountryListAdapter constructor(
         this.countryListFiltered.clear()
         this.countryList.addAll(list)
         this.countryListFiltered.addAll(list)
+        notifyDataSetChanged()
+    }
+
+    fun sortByCases() {
+        countryListFiltered.sortWith(Comparator { o1, o2 ->
+            o2.totalConfirmed.compareTo(o1.totalConfirmed);
+        })
+        notifyDataSetChanged()
+    }
+
+    fun sortByDeaths() {
+        countryListFiltered.sortWith(Comparator { o1, o2 ->
+            o2.totalDeaths.compareTo(o1.totalDeaths);
+        })
+        notifyDataSetChanged()
+    }
+
+    fun sortByRecovered() {
+        countryListFiltered.sortWith(Comparator { o1, o2 ->
+            o2.totalRecovered.compareTo(o1.totalRecovered);
+        })
         notifyDataSetChanged()
     }
 
