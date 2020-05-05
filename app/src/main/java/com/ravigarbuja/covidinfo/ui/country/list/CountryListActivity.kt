@@ -1,4 +1,4 @@
-package com.ravigarbuja.covidinfo.ui.countries
+package com.ravigarbuja.covidinfo.ui.country.list
 
 import android.content.Context
 import android.content.Intent
@@ -14,6 +14,7 @@ import com.ravigarbuja.covidinfo.R
 import com.ravigarbuja.covidinfo.base.BaseActivity
 import com.ravigarbuja.covidinfo.data.model.Country
 import com.ravigarbuja.covidinfo.databinding.ActivityCountryListBinding
+import com.ravigarbuja.covidinfo.ui.country.detail.CountryDetailActivity
 import com.ravigarbuja.covidinfo.util.showToast
 import kotlinx.android.synthetic.main.activity_country_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -104,9 +105,10 @@ class CountryListActivity : BaseActivity<CountryListViewModel, ActivityCountryLi
 
 
     private fun setUpRecyclerView(data: MutableList<Country>) {
-        countryListAdapter = CountryListAdapter(
-            countryListViewModel = countryListViewModel
-        )
+        countryListAdapter =
+            CountryListAdapter(
+                countryListViewModel = countryListViewModel
+            )
         countryListAdapter.setCountryList(data)
 
         mBinding.rvCountriesList.adapter = countryListAdapter
@@ -134,6 +136,7 @@ class CountryListActivity : BaseActivity<CountryListViewModel, ActivityCountryLi
     }
 
     override fun onItemClick(country: Country) {
-        showToast("Open detail view for ${country.name}")
+//        showToast("Open detail view for ${country.name}")
+        startActivity(CountryDetailActivity.getInstance(this, country))
     }
 }

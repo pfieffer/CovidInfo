@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">CovidInfo</string>
 
+    <string name="int_to_string">%d</string>
+
     <string name="txt_total_confirmed">Total Confirmed</string>
     <string name="txt_total_deaths">Total Deaths</string>
     <string name="txt_total_recovered">Total Recovered</string>
@@ -17,4 +19,16 @@
     <string name="menu_title_search_country">Search Country</string>
     <string name="menu_search_et_hint">Search…</string>
     <string name="data_for_country">Data for %s</string>
+
+    <string name="large_text">
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat ligula ac enim commodo rutrum. Curabitur lorem dui, molestie non tellus id, ultrices condimentum sem. Maecenas porta lobortis sapien, a scelerisque metus luctus eu. Aliquam varius quam felis, vitae ultricies dolor rhoncus a. Suspendisse gravida, leo quis luctus fermentum, sapien arcu pretium mi, non viverra augue tortor et massa. Aenean tempus lorem sapien, eu blandit mauris ultrices eu. Aliquam erat volutpat. Nulla commodo, mi eget pretium pretium, dui dolor sodales magna, nec lacinia orci mi eget nisl.
+
+Donec quis sapien at enim fermentum ultrices a et tortor. Cras eget mi blandit, tincidunt risus nec, commodo lacus. Vivamus luctus vel ex id pellentesque. Mauris pharetra justo non nulla mollis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse ullamcorper rhoncus lorem eu interdum. Sed massa nunc, ultrices varius lacinia a, rutrum ac sem. Morbi imperdiet vestibulum mauris nec elementum. Vestibulum eget auctor nisl. Phasellus pellentesque sem dui, in maximus risus venenatis sit amet. Suspendisse mi massa, sodales eget dui a, ultricies tempus dolor. Curabitur convallis malesuada dolor, non sagittis nunc placerat a. Mauris quis ipsum tempus ipsum ornare convallis. Integer dapibus libero et dapibus consectetur. Praesent volutpat, lorem id efficitur posuere, felis dui finibus urna, nec convallis sapien massa vitae lorem.
+
+Nam non ante eget arcu interdum aliquam egestas eu risus. Cras imperdiet massa pretium imperdiet aliquam. Aenean porta erat augue, eu mattis nibh mattis vitae. Ut ut libero consectetur, hendrerit ipsum non, congue tortor. Curabitur euismod rhoncus odio ac fringilla. Praesent dictum velit id lacinia tincidunt. Donec urna massa, commodo eget blandit consectetur, porta et ipsum. Curabitur sed dui venenatis ante ornare cursus auctor ut orci. Ut consequat mattis suscipit. Proin pharetra pulvinar urna dignissim suscipit. Pellentesque scelerisque facilisis dolor, eget gravida lacus gravida et. Morbi blandit pharetra porttitor. Suspendisse condimentum lectus sit amet lacus sagittis pretium. Nunc venenatis id urna viverra tristique. Vivamus sed imperdiet mi, eu placerat ex. Sed tristique ipsum sit amet felis imperdiet, placerat pellentesque metus cursus.
+
+Phasellus blandit ultricies risus ut commodo. Nunc malesuada viverra erat vitae accumsan. Sed volutpat metus suscipit nibh rhoncus suscipit. In accumsan dolor egestas varius convallis. Nam semper tellus elit, sit amet rutrum arcu maximus sit amet. Suspendisse potenti. Sed posuere justo enim, id blandit urna ultrices eget. Donec sit amet vehicula eros, fermentum rutrum erat. Etiam et finibus neque. Etiam rhoncus odio vitae libero rutrum, quis aliquet neque dictum. Donec vitae nunc non neque vestibulum lobortis. Nulla luctus pellentesque nunc, quis pharetra turpis iaculis sit amet. Aenean metus odio, tempus vel rhoncus in, condimentum non risus. Curabitur a odio pretium, auctor dolor ut, accumsan augue.
+
+Vivamus pellentesque nisl a nisi vehicula, a ultrices purus viverra. Aliquam porta arcu quis ligula cursus sagittis sed ornare elit. Integer luctus fermentum scelerisque. Aliquam ac pretium ex, eu fermentum est. Morbi dapibus metus eu mattis volutpat. Suspendisse efficitur vulputate lobortis. Interdum et malesuada fames ac ante ipsum primis in faucibus. </string>
 </resources>
