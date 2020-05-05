@@ -57,6 +57,12 @@ class MainViewModel(
         }
     }
 
+    fun onMyCountryClicked() {
+        defaultCountryLD.value?.let {
+            getNavigator().navigateToMyCountryDetail(it)
+        }
+    }
+
     fun onRetryClicked() {
         loadSummaryData()
     }
