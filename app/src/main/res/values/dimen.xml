@@ -7,10 +7,11 @@
     <dimen name="margin_padding_large">16dp</dimen>
 
     <!--region: Card dimens-->
-    <dimen name="card_corner_radius">4dp</dimen>
-    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
 
     <!--region: Text Sizes-->
+    <dimen name="txt_size_medium">18sp</dimen>
     <dimen name="txt_size_large">24sp</dimen>
 
     <dimen name="btn_corner_radius">8dp</dimen>
