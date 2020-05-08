@@ -11,5 +11,5 @@ val viewModelModule = module {
     viewModel { MainViewModel(get()) }
     viewModel { SummaryViewModel() }
     viewModel { CountryListViewModel() }
-    viewModel { CountryDetailViewModel() }
+    viewModel { CountryDetailViewModel(get()) }
 }

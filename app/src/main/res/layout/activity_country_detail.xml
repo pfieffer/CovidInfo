@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.ravigarbuja.covidinfo.ui.country.detail.CountryDetailViewModel" />
@@ -42,8 +43,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
-                    app:title="@{viewModel.currentCountry.name}"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:title="@{viewModel.currentCountry.name}" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
@@ -55,10 +56,11 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/margin_padding_small"
+                android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/margin_padding_medium"
+                android:layout_marginTop="@dimen/margin_padding_small"
                 android:layout_marginEnd="@dimen/margin_padding_medium"
-                android:layout_height="match_parent">
+                android:layout_marginBottom="@dimen/margin_padding_medium">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_country_summary"
@@ -149,17 +151,61 @@
                             app:layout_constraintStart_toEndOf="@id/tv_total_deaths_label_country"
                             app:layout_constraintTop_toBottomOf="@id/tv_total_recovered_country" />
 
-<!--                        <ImageView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:src="@drawable/ic_arrow_forward_white_24dp"-->
-<!--                            app:layout_constraintEnd_toEndOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent" />-->
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                 </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_mortality_figure"
+                    style="@style/TextAppearance.Text.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_padding_large"
+                    android:text="@{@string/figure_percent(viewModel.mortalityPercent)}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_country_summary"
+                    tools:text="12%" />
+
+                <TextView
+                    android:id="@+id/tv_label_mortality"
+                    style="@style/TextAppearance.Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_padding_small"
+                    android:text="@string/txt_label_mortality"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_mortality_figure"
+                    app:layout_constraintStart_toEndOf="@id/tv_mortality_figure" />
+
+                <TextView
+                    android:id="@+id/tv_recovery_figure"
+                    style="@style/TextAppearance.Text.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_padding_large"
+                    android:layout_marginTop="@dimen/margin_padding_large"
+                    android:text="@{@string/figure_percent(viewModel.recoveryPercent)}"
+                    app:layout_constraintStart_toEndOf="@id/tv_label_mortality"
+                    app:layout_constraintTop_toBottomOf="@id/cv_country_summary"
+                    tools:text="8%" />
+
+                <TextView
+                    style="@style/TextAppearance.Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_padding_small"
+                    android:text="@string/txt_label_recovery"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_recovery_figure"
+                    app:layout_constraintStart_toEndOf="@id/tv_recovery_figure" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lc_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="@dimen/margin_padding_large"
+                    android:layout_marginBottom="@dimen/margin_padding_medium"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_mortality_figure" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
