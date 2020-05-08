@@ -14,6 +14,12 @@
     <string name="txt_data_load_failed">Data Load failed. Click to try again</string>
 
     <string name="txt_data_updated_on">Data updated on:</string>
+    <string name="txt_label_world_summary">World Summary</string>
+    <string name="txt_label_total">Total:</string>
+    <string name="txt_label_new">New:</string>
+    <string name="cases_num">Cases: %d</string>
+    <string name="deaths_num">Deaths: %d</string>
+    <string name="recovered_num">Recovered: %d</string>
 
     <string name="cases_confirmed">Cases Confirmed: %d</string>
     <string name="total_deaths">Total Deaths: %d</string>

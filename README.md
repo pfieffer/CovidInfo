@@ -10,15 +10,13 @@
  2. Retrofit client side caching  
  3. Display list of countries with number of cases confirmed  
  4. Search/ Filter the country list  
- 5. Sort country list based on the figures 
- 6. Get user's country and enable quick navigate to own country statistics  
+ 5. Sort country list based on the 3 filters: confirmed, recovered and deaths
+ 6. Get user's country and enable quick navigate to own country statistics
+ 7. Country Detail Screen for data related to a country
   
 #### BackLog:  
-  
- - ~~Sort data in the list view for countries~~  
- - Present summary data in better graphs and/or charts  
- - Awareness and About Screen  
- - Country Detail  
+
+ - Awareness and About Screen
  - Map Views for country detail  
   
 #### Contribute :  
@@ -32,7 +30,7 @@ If you want to contribute to this project, you can open an issue, discuss it, wo
   
 |Search| Summary |  
 |--|--|  
-| ![Search / Filter](https://github.com/pfieffer/CovidInfo/blob/master/screenshots/3.png) | ![Search / Filter](https://github.com/pfieffer/CovidInfo/blob/master/screenshots/sum.png) |
+| ![Search / Filter](https://github.com/pfieffer/CovidInfo/blob/master/screenshots/3.png) | ![Search / Filter](https://github.com/pfieffer/CovidInfo/blob/master/screenshots/4.png) |
 
 |Sort | Country Detail|  
 |--|--|  
