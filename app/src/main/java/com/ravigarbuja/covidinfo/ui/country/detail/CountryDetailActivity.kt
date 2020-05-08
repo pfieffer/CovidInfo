@@ -48,6 +48,8 @@ class CountryDetailActivity : BaseActivity<CountryDetailViewModel, ActivityCount
         intent.getParcelableExtra<Country>(INTENT_EXTRA_COUNTRY_DATA).let {
             if (it != null) {
                 countryDetailViewModel.currentCountry.set(it)
+                countryDetailViewModel.calcMortalityPercent()
+                countryDetailViewModel.calcRecoveryPercent()
                 countryDetailViewModel.loadAllCasesDataSinceDayOne()
             }
         }
@@ -72,7 +74,6 @@ class CountryDetailActivity : BaseActivity<CountryDetailViewModel, ActivityCount
                     }
                     Status.SUCCESS -> {
                         hideLoading()
-
                         initLineChart(it.data!!)
                     }
                 }
