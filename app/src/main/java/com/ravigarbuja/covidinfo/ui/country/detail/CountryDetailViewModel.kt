@@ -5,7 +5,7 @@ import androidx.lifecycle.MediatorLiveData
 import com.ravigarbuja.covidinfo.base.BaseViewModel
 import com.ravigarbuja.covidinfo.data.model.Country
 import com.ravigarbuja.covidinfo.data.model.DayCase
-import com.ravigarbuja.covidinfo.data.network.repository.CountryCasesRepository
+import com.ravigarbuja.covidinfo.data.repository.CountryCasesRepository
 import com.ravigarbuja.covidinfo.util.Resource
 
 class CountryDetailViewModel(private val countryCasesRepository: CountryCasesRepository) :

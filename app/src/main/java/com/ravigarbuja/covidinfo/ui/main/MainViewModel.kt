@@ -5,11 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import com.ravigarbuja.covidinfo.base.BaseViewModel
 import com.ravigarbuja.covidinfo.data.model.Country
 import com.ravigarbuja.covidinfo.data.model.Summary
-import com.ravigarbuja.covidinfo.data.network.repository.SummaryRepository
+import com.ravigarbuja.covidinfo.data.repository.SummaryRepository
 import com.ravigarbuja.covidinfo.util.Resource
 
 class MainViewModel(
-    private val summaryRepository: SummaryRepository
+    private val summaryRepository: SummaryRepository,
+    private val defaultCountryCode: CharSequence
 ) : BaseViewModel<MainNavigator>() {
     val dataLoaded = MutableLiveData<Boolean>(true)
     val summaryLiveData = MediatorLiveData<Resource<Summary>>()
@@ -17,12 +18,16 @@ class MainViewModel(
 
     init {
         loadSummaryData()
-        setDefaultCountry()
     }
 
-    private fun setDefaultCountry() {
-        defaultCountryLD.addSource(summaryRepository.getDefaultCountry()) {
-            defaultCountryLD.value = it
+    private fun setDefaultCountry(countries: List<Country>) {
+        for (country in countries) {
+            if (country.countryCode == defaultCountryCode) {
+                country.imagePath =
+                    "countriesFlag/" + country.countryCode.toLowerCase() + ".png"
+                defaultCountryLD.value = country
+                break
+            }
         }
     }
 
@@ -43,6 +48,8 @@ class MainViewModel(
         totalDeaths.postValue(data.global.totalDeaths.toString())
         totalRecovered.postValue(data.global.totalRecovered.toString())
         summaryData.postValue(data)
+
+        setDefaultCountry(data.countries)
     }
 
     fun onSummaryClicked() {
