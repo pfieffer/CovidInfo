@@ -4,11 +4,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 
-interface BaseRepository {
+interface BaseDataStore {
     fun cancel()
 }
 
-abstract class BaseRepositoryImpl : BaseRepository {
+abstract class BaseDataStoreImpl : BaseDataStore {
     /**
      * This is the job for all coroutines started by this ViewModel.
      *

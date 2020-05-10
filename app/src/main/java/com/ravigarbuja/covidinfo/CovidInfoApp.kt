@@ -1,10 +1,7 @@
 package com.ravigarbuja.covidinfo
 
 import android.app.Application
-import com.ravigarbuja.covidinfo.di.apiModule
-import com.ravigarbuja.covidinfo.di.appModule
-import com.ravigarbuja.covidinfo.di.repositoryModule
-import com.ravigarbuja.covidinfo.di.viewModelModule
+import com.ravigarbuja.covidinfo.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidFileProperties
 import org.koin.android.ext.koin.androidLogger
@@ -30,6 +27,7 @@ class CovidInfoApp : Application() {
                 listOf(
                     appModule,
                     apiModule,
+                    dataStoreModule,
                     repositoryModule,
                     viewModelModule
                 )

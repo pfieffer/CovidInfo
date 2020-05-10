@@ -1,26 +1,26 @@
 package com.ravigarbuja.covidinfo.di
 
+import com.ravigarbuja.covidinfo.data.CovidDataStore
 import com.ravigarbuja.covidinfo.data.network.ApiServices
-import com.ravigarbuja.covidinfo.data.network.repository.CountryCasesRepository
-import com.ravigarbuja.covidinfo.data.network.repository.CountryCasesRepositoryImpl
-import com.ravigarbuja.covidinfo.data.network.repository.SummaryRepository
-import com.ravigarbuja.covidinfo.data.network.repository.SummaryRepositoryImpl
+import com.ravigarbuja.covidinfo.data.repository.CountryCasesRepository
+import com.ravigarbuja.covidinfo.data.repository.CountryCasesRepositoryImpl
+import com.ravigarbuja.covidinfo.data.repository.SummaryRepository
+import com.ravigarbuja.covidinfo.data.repository.SummaryRepositoryImpl
 import org.koin.dsl.module
 
 val repositoryModule = module {
-    factory { provideSummaryRepository(get(), get()) }
+    factory { provideSummaryRepository(get()) }
     factory { provideCountryCasesRepository(get()) }
 }
 
 fun provideSummaryRepository(
-    apiServices: ApiServices,
-    countryCode: CharSequence
+    covidDataStore: CovidDataStore
 ): SummaryRepository {
-    return SummaryRepositoryImpl(apiServices, countryCode)
+    return SummaryRepositoryImpl(covidDataStore)
 }
 
 fun provideCountryCasesRepository(
-    apiServices: ApiServices
+    covidDataStore: CovidDataStore
 ): CountryCasesRepository {
-    return CountryCasesRepositoryImpl(apiServices)
+    return CountryCasesRepositoryImpl(covidDataStore)
 }
