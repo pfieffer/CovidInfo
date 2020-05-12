@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="com.ravigarbuja.covidinfo.util.CommonExtensionKt" />
+
         <variable
             name="countryModel"
             type="com.ravigarbuja.covidinfo.data.model.Country" />
@@ -52,21 +54,21 @@
                 style="@style/TextAppearance.Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{@string/cases_confirmed(countryModel.totalConfirmed)}"
-                tools:text="Total Confirmed: 24567" />
+                android:text="@{@string/cases_confirmed(CommonExtensionKt.formatNumberBasedOnLocale(countryModel.totalConfirmed))}"
+                tools:text="Total Confirmed: 24,567" />
 
             <TextView
                 style="@style/TextAppearance.Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{@string/total_deaths(countryModel.totalDeaths)}"
+                android:text="@{@string/total_deaths(CommonExtensionKt.formatNumberBasedOnLocale(countryModel.totalDeaths))}"
                 tools:text="Total Deaths: 245" />
 
             <TextView
                 style="@style/TextAppearance.Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{@string/total_recovered(countryModel.totalRecovered)}"
+                android:text="@{@string/total_recovered(CommonExtensionKt.formatNumberBasedOnLocale(countryModel.totalRecovered))}"
                 tools:text="Total Deaths: 245" />
 
         </LinearLayout>

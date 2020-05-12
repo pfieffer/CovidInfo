@@ -92,10 +92,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_padding_large"
-                            android:text="@{@string/int_to_string(viewModel.currentCountry.totalConfirmed)}"
                             app:layout_constraintStart_toStartOf="@id/tv_total_confirmed_label_country"
                             app:layout_constraintTop_toBottomOf="@id/tv_label_summary_country"
-                            tools:text="1162857" />
+                            app:numText="@{viewModel.currentCountry.totalConfirmed}"
+                            tools:text="1,162,857" />
 
                         <TextView
                             android:id="@+id/tv_total_confirmed_label_country"
@@ -114,11 +114,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_padding_large"
-
-                            android:text="@{@string/int_to_string(viewModel.currentCountry.totalDeaths)}"
                             app:layout_constraintStart_toStartOf="@id/tv_total_deaths_label_country"
                             app:layout_constraintTop_toBottomOf="@id/tv_label_summary_country"
-                            tools:text="63263" />
+                            app:numText="@{viewModel.currentCountry.totalDeaths}"
+                            tools:text="63,263" />
 
                         <TextView
                             android:id="@+id/tv_total_deaths_label_country"
@@ -136,10 +135,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_padding_large"
-                            android:text="@{@string/int_to_string(viewModel.currentCountry.totalRecovered)}"
                             app:layout_constraintStart_toStartOf="@id/tv_total_recovered_label_country"
                             app:layout_constraintTop_toBottomOf="@id/tv_label_summary_country"
-                            tools:text="230845" />
+                            app:numText="@{viewModel.currentCountry.totalRecovered}"
+                            tools:text="230,845" />
 
                         <TextView
                             android:id="@+id/tv_total_recovered_label_country"

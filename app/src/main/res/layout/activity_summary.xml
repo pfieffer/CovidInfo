@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="com.ravigarbuja.covidinfo.util.CommonExtensionKt" />
+
         <variable
             name="viewModel"
             type="com.ravigarbuja.covidinfo.ui.summary.SummaryViewModel" />
@@ -90,7 +92,7 @@
                         style="@style/TextAppearance.Text.White"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{@string/cases_num(viewModel.globalLiveData.totalConfirmed)}"
+                        android:text="@{@string/cases_num(CommonExtensionKt.formatNumberBasedOnLocale(viewModel.globalLiveData.totalConfirmed))}"
                         tools:text="@string/cases_num" />
 
 
@@ -98,14 +100,14 @@
                         style="@style/TextAppearance.Text.White"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{@string/deaths_num(viewModel.globalLiveData.totalDeaths)}"
+                        android:text="@{@string/deaths_num(CommonExtensionKt.formatNumberBasedOnLocale(viewModel.globalLiveData.totalDeaths))}"
                         tools:text="@string/deaths_num" />
 
                     <TextView
                         style="@style/TextAppearance.Text.White"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{@string/recovered_num(viewModel.globalLiveData.totalRecovered)}"
+                        android:text="@{@string/recovered_num(CommonExtensionKt.formatNumberBasedOnLocale(viewModel.globalLiveData.totalRecovered))}"
                         tools:text="@string/recovered_num" />
 
                 </LinearLayout>
@@ -138,7 +140,7 @@
                         style="@style/TextAppearance.Text.White"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{@string/cases_num(viewModel.globalLiveData.newConfirmed)}"
+                        android:text="@{@string/cases_num(CommonExtensionKt.formatNumberBasedOnLocale(viewModel.globalLiveData.newConfirmed))}"
                         tools:text="@string/cases_num" />
 
 
@@ -146,14 +148,14 @@
                         style="@style/TextAppearance.Text.White"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{@string/deaths_num(viewModel.globalLiveData.newDeaths)}"
+                        android:text="@{@string/deaths_num(CommonExtensionKt.formatNumberBasedOnLocale(viewModel.globalLiveData.newDeaths))}"
                         tools:text="@string/deaths_num" />
 
                     <TextView
                         style="@style/TextAppearance.Text.White"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{@string/recovered_num(viewModel.globalLiveData.newRecovered)}"
+                        android:text="@{@string/recovered_num(CommonExtensionKt.formatNumberBasedOnLocale(viewModel.globalLiveData.newRecovered))}"
                         tools:text="@string/recovered_num" />
 
                 </LinearLayout>
