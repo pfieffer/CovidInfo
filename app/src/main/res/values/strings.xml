@@ -12,18 +12,19 @@
     <string name="label_awareness">Awareness</string>
     <string name="label_about">About</string>
     <string name="txt_data_load_failed">Data Load failed. Click to try again</string>
+    <string name="txt_my_country">My Country</string>
 
     <string name="txt_data_updated_on">Data updated on:</string>
     <string name="txt_label_world_summary">World Summary</string>
     <string name="txt_label_total">Total:</string>
     <string name="txt_label_new">New:</string>
-    <string name="cases_num">Cases: %d</string>
-    <string name="deaths_num">Deaths: %d</string>
-    <string name="recovered_num">Recovered: %d</string>
+    <string name="cases_num">Cases: %s</string>
+    <string name="deaths_num">Deaths: %s</string>
+    <string name="recovered_num">Recovered: %s</string>
 
-    <string name="cases_confirmed">Cases Confirmed: %d</string>
-    <string name="total_deaths">Total Deaths: %d</string>
-    <string name="total_recovered">Total Recovered: %d</string>
+    <string name="cases_confirmed">Cases Confirmed: %s</string>
+    <string name="total_deaths">Total Deaths: %s</string>
+    <string name="total_recovered">Total Recovered: %s</string>
 
     <string name="menu_title_search_country">Search Country</string>
     <string name="menu_title_sor">Sort</string>

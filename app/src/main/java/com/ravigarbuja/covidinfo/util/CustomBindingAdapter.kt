@@ -1,18 +1,21 @@
-package com.ravigarbuja.covidinfo.ui.country.list
+package com.ravigarbuja.covidinfo.util
 
 import android.graphics.drawable.Drawable
 import android.util.Log
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import java.io.IOException
 import java.io.InputStream
 
-object CountryListBindingAdapter {
+object CustomBindingAdapter {
 
+    /**
+     * Set the flag on an imageview for a country based on its country code
+     */
     @BindingAdapter("setCountryFlag")
     @JvmStatic
     fun ImageView.setCountryFlagFromAsset(countryCode: String) {
-        //TODO: See if there is a flag corresponding to the country code in assets directory
 
         val imagePath = "countriesFlag/" + countryCode.toLowerCase() + ".png"
 
@@ -38,4 +41,13 @@ object CountryListBindingAdapter {
         }
     }
 
+    /**
+     * Set locale formatted number to the Textview
+     */
+    @BindingAdapter("numText")
+    @JvmStatic
+    fun TextView.setNumber(number: Int){
+        val formattedString = number.formatNumberBasedOnLocale()
+        text = formattedString
+    }
 }
