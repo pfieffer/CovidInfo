@@ -68,6 +68,13 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp_version"
     implementation 'com.itkacher.okhttpprofiler:okhttpprofiler:1.0.7'
 
+    // room db
+    implementation "androidx.room:room-runtime:$rootProject.room_version"
+    annotationProcessor "androidx.room:room-compiler:$rootProject.room_version" // For Kotlin use kapt instead of annotationProcessor
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$rootProject.room_version"
+
+
     //Architecture Component viewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle_version"
