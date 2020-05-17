@@ -14,13 +14,13 @@ class CountryDetailViewModel(private val countryCasesRepository: CountryCasesRep
     val mortalityPercent = ObservableField<Float>()
     val recoveryPercent = ObservableField<Float>()
 
-    val allCasesSinceDayOneMLD = MediatorLiveData<Resource<List<DayCase>>>()
+    val allCasesSinceDayOneLiveData = MediatorLiveData<Resource<List<DayCase>>>()
 
     fun loadAllCasesDataSinceDayOne() {
-        allCasesSinceDayOneMLD.addSource(
+        allCasesSinceDayOneLiveData.addSource(
             countryCasesRepository.getTotalAllStatusCasesFromDayOne(currentCountry.get()!!.slug)
         ) {
-            allCasesSinceDayOneMLD.value = it
+            allCasesSinceDayOneLiveData.value = it
         }
     }
 

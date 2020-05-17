@@ -13,6 +13,6 @@ interface ApiServices {
     fun getSummaryAsync(): Deferred<Summary>
 
     @GET(Api.EndPoint.TOTAL_CASES_COUNTRY_DAY_ONE)
-    fun getTotalCasesSinceDayOneAsync(@Path("country-slug") countrySlug: String): Deferred<List<DayCase>>
+    fun getTotalCaseSinceDayOneAsync(@Path("country-slug") countrySlug: String): Deferred<List<DayCase>>
 }
 

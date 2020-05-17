@@ -23,3 +23,5 @@ const val DATE_TIME_FORMAT_API =
     "yyyy-MM-dd'T'HH:mm:ss" //2020-04-05T17:37:00Z ISO_FORMAT (UTC time)
 const val FRIENDLY_DATE_FORMAT = "E MMM dd yyyy" //Fri Apr 05 2020
 const val FRIENDLY_TIME_FORMAT = "h:mm a" //5:37 PM
+
+const val DB_NAME = "covid_info.db"

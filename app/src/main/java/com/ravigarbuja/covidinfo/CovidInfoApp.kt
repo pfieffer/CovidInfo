@@ -27,6 +27,7 @@ class CovidInfoApp : Application() {
                 listOf(
                     appModule,
                     apiModule,
+                    persistenceDataModule,
                     dataStoreModule,
                     repositoryModule,
                     viewModelModule

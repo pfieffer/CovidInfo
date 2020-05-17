@@ -32,29 +32,29 @@ fun createOkHttpClient(context: Context): OkHttpClient {
     httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
     return OkHttpClient.Builder()
-        .cache(Cache(context.cacheDir, MAX_CACHE_SIZE))
+//        .cache(Cache(context.cacheDir, MAX_CACHE_SIZE))
         .connectTimeout(CONNECT_TIMEOUT_SECONDS, TimeUnit.SECONDS)
         .readTimeout(READ_TIMEOUT_SECONDS, TimeUnit.SECONDS)
-        .addInterceptor(object : Interceptor {
-            override fun intercept(chain: Interceptor.Chain): Response {
-                var request: Request = chain.request()
-                if (hasNetwork((context)) != null) {
-                    if (!hasNetwork(context)!!) {
-                        val maxStale = STALE_CACHE_TOLERANCE_SECONDS
-                        request = request
-                            .newBuilder()
-                            .header(
-                                "Cache-Control",
-                                "private, If-Not-Modified, max-stale=$maxStale"
-                            )
-                            .build()
-                    }
-                }
-                return chain.proceed(request)
-
-            }
-
-        })
+//        .addInterceptor(object : Interceptor {
+//            override fun intercept(chain: Interceptor.Chain): Response {
+//                var request: Request = chain.request()
+//                if (hasNetwork((context)) != null) {
+//                    if (!hasNetwork(context)!!) {
+//                        val maxStale = STALE_CACHE_TOLERANCE_SECONDS
+//                        request = request
+//                            .newBuilder()
+//                            .header(
+//                                "Cache-Control",
+//                                "private, If-Not-Modified, max-stale=$maxStale"
+//                            )
+//                            .build()
+//                    }
+//                }
+//                return chain.proceed(request)
+//
+//            }
+//
+//        })
 
         .addInterceptor(OkHttpProfilerInterceptor())
         .addInterceptor(httpLoggingInterceptor).build()

@@ -11,6 +11,7 @@ import com.ravigarbuja.covidinfo.databinding.ActivityMainBinding
 import com.ravigarbuja.covidinfo.ui.country.detail.CountryDetailActivity
 import com.ravigarbuja.covidinfo.ui.country.list.CountryListActivity
 import com.ravigarbuja.covidinfo.ui.summary.SummaryActivity
+import com.ravigarbuja.covidinfo.util.Resource
 import com.ravigarbuja.covidinfo.util.Status
 import com.ravigarbuja.covidinfo.util.showToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -37,11 +38,8 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(), MainNav
 
     private fun initObservable() {
         with(mainViewModel) {
-            summaryLiveData.observe(this@MainActivity, Observer { responseResource ->
-                when (responseResource.status) {
-                    Status.PROGRESS -> {
-                        showLoading("")
-                    }
+            summaryLiveData.observe(this@MainActivity, Observer {
+                when (it.status) {
                     Status.LOADING -> {
                         showLoading("")
                     }
@@ -52,8 +50,10 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(), MainNav
                     }
                     Status.SUCCESS -> {
                         hideLoading()
-                        this.populateData(responseResource.data!!)
+                        this.populateData(it.data!!)
                     }
+
+
                 }
             })
         }

@@ -3,16 +3,14 @@ package com.ravigarbuja.covidinfo.ui.country.detail
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.DashPathEffect
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import com.github.mikephil.charting.components.*
+import com.github.mikephil.charting.components.Description
+import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.Legend.LegendForm
-import com.github.mikephil.charting.components.LimitLine.LimitLabelPosition
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
-import com.github.mikephil.charting.formatter.IFillFormatter
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.ravigarbuja.covidinfo.BR
 import com.ravigarbuja.covidinfo.INTENT_EXTRA_COUNTRY_DATA
@@ -21,6 +19,7 @@ import com.ravigarbuja.covidinfo.base.BaseActivity
 import com.ravigarbuja.covidinfo.data.model.Country
 import com.ravigarbuja.covidinfo.data.model.DayCase
 import com.ravigarbuja.covidinfo.databinding.ActivityCountryDetailBinding
+import com.ravigarbuja.covidinfo.util.Resource
 import com.ravigarbuja.covidinfo.util.Status
 import com.ravigarbuja.covidinfo.util.showToast
 import kotlinx.android.synthetic.main.activity_country_detail.*
@@ -60,11 +59,8 @@ class CountryDetailActivity : BaseActivity<CountryDetailViewModel, ActivityCount
 
     private fun setupObservable() {
         with(countryDetailViewModel) {
-            allCasesSinceDayOneMLD.observe(this@CountryDetailActivity, Observer {
+            allCasesSinceDayOneLiveData.observe(this@CountryDetailActivity, Observer {
                 when (it.status) {
-                    Status.PROGRESS -> {
-                        showLoading("")
-                    }
                     Status.LOADING -> {
                         showLoading("")
                     }
@@ -76,6 +72,7 @@ class CountryDetailActivity : BaseActivity<CountryDetailViewModel, ActivityCount
                         hideLoading()
                         initLineChart(it.data!!)
                     }
+
                 }
             })
         }
